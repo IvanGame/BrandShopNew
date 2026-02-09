@@ -1,0 +1,61 @@
+$colorBack: #222222
+$colorSite: #F16D7F
+$siteWidth: 1140px
+
+* 
+    margin: 0
+    padding: 0
+
+body
+    font-family: "Lato", sans-serif
+
+.center
+    padding-left: calc( 50% - $siteWidth / 2 )
+    padding-right: calc( 50% - $siteWidth / 2 )
+
+.header 
+    background-color: $colorBack
+    display: flex
+    justify-content: space-between
+    padding-top: 20px
+    padding-bottom: 20px
+    &__left
+        display: flex
+        align-items: center
+        gap: 40px
+        &_btn
+            cursor: pointer
+            path
+                transition: fill 0.3s ease
+            &:hover path
+                fill: $colorSite
+    &__right
+        display: flex
+        align-items: center
+        gap: 30px
+        &_btn
+            cursor: pointer
+
+.top 
+    display: flex
+    gap: 64px
+    background-color: #F1E4E6
+    &__heading
+        align-self: center
+        border-left: 12px solid $colorSite
+        padding-left: 14px
+        color: $colorBack
+        & h1
+            font-weight: 900
+            font-size: 48px
+            line-height: 100%
+            letter-spacing: 0
+            
+        & h2
+            font-weight: 700
+            font-size: 32px
+            line-height: 100%
+            letter-spacing: 0%
+            padding-top: 5px
+            & span
+                color: $colorSite
