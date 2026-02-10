@@ -9,6 +9,9 @@ $siteWidth: 1140px
 body
     font-family: "Lato", sans-serif
 
+a
+    text-decoration: none
+
 .center
     padding-left: calc( 50% - $siteWidth / 2 )
     padding-right: calc( 50% - $siteWidth / 2 )
@@ -23,7 +26,7 @@ body
         display: flex
         align-items: center
         gap: 40px
-        &_btn
+    &__left-btn
             cursor: pointer
             path
                 transition: fill 0.3s ease
@@ -33,13 +36,15 @@ body
         display: flex
         align-items: center
         gap: 30px
-        &_btn
+    &__right-btn
             cursor: pointer
 
 .top 
     display: flex
     gap: 64px
     background-color: #F1E4E6
+    & img
+        width: 50%
     &__heading
         align-self: center
         border-left: 12px solid $colorSite
@@ -59,3 +64,144 @@ body
             padding-top: 5px
             & span
                 color: $colorSite
+
+.categories
+    margin-top: 60px
+    gap: 30px
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    &__card
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        min-height: 260px
+        position: relative
+        cursor: pointer
+        background-position: center
+        background-size: cover
+        & p
+            position: relative
+            color: #FFF
+            font-weight: 400
+            font-size: 16px
+            line-height: 100%
+            letter-spacing: 0%
+            text-align: center
+            z-index: 2
+            padding-bottom: 5px
+        & h3
+            position: relative
+            color: $colorSite
+            font-weight: 700
+            font-size: 24px
+            line-height: 100%
+            letter-spacing: 0%
+            text-align: center
+            z-index: 2
+        &::before
+            content: ""
+            position: absolute
+            background-color: #211616B2
+            inset: 0
+            z-index: 1
+    &__card-1
+        background-image: url("images/card1.jpg")
+    &__card-2
+        background-image: url("images/card2.jpg")
+    &__card-3
+        background-image: url("images/card3.jpg")
+    &__card-wide
+        grid-column: 1 / -1
+        min-height: 180px
+        background-image: url("images/card4.jpg")
+
+.products
+    margin-top: 100px
+    margin-bottom: 95px
+    &__header
+        margin-bottom: 48px
+    &__heading
+        color: $colorBack
+        font-size: 30px
+        font-weight: 400
+        line-height: 100%
+        text-align: center
+        padding-bottom: 6px
+    &__text
+        color: #9f9f9f
+        font-size: 14px
+        font-weight: 400
+        line-height: 100%
+        text-align: center
+    &__list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 30px
+        margin-bottom: 48px
+    &__footer
+        text-align: center
+    &__more-btn
+        color: $colorSite
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        border: 1px solid $colorSite
+        padding: 15px 40px
+        cursor: pointer
+        background-color: #fff
+        transition: color, background-color .5s ease
+    &__more-btn:hover
+        background-color: $colorSite
+        color: #fff
+
+.product-card
+    display: flex
+    flex-direction: column
+    &__box
+        display: flex
+        flex-direction: column
+        padding: 24px 16px
+        gap: 20px
+        background-color: #f8f8f8
+    &__title
+        font-weight: 400
+        font-size: 13px
+        line-height: 100%
+        color: #000
+    &__text
+        font-weight: 300
+        font-size: 14px
+        line-height: 130%
+        letter-spacing: 0
+        color: #5d5d5d
+    &__price
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        color: $colorSite
+
+.ad-box
+    background-color: $colorBack
+    display: flex
+    gap: 30px
+    padding-top: 100px
+    padding-bottom: 100px
+    &__card
+        display: flex
+        gap: 20px
+        flex-direction: column
+        align-items: center
+    &__title
+        font-weight: 400
+        font-size: 20px
+        line-height: 100%
+        color: #fbfbfb
+    &__text
+        font-weight: 300
+        font-size: 14px
+        line-height: 100%
+        color: #fbfbfb
+        text-align: center
+        padding-left: 30px
+        padding-right: 30px

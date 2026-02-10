@@ -7,6 +7,10 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .center {
   padding-left: calc(50% - 570px);
   padding-right: calc(50% - 570px);
@@ -24,13 +28,13 @@ body {
   align-items: center;
   gap: 40px;
 }
-.header__left_btn {
+.header__left-btn {
   cursor: pointer;
 }
-.header__left_btn path {
+.header__left-btn path {
   transition: fill 0.3s ease;
 }
-.header__left_btn:hover path {
+.header__left-btn:hover path {
   fill: #F16D7F;
 }
 .header__right {
@@ -38,7 +42,7 @@ body {
   align-items: center;
   gap: 30px;
 }
-.header__right_btn {
+.header__right-btn {
   cursor: pointer;
 }
 
@@ -46,6 +50,9 @@ body {
   display: flex;
   gap: 64px;
   background-color: #F1E4E6;
+}
+.top img {
+  width: 50%;
 }
 .top__heading {
   align-self: center;
@@ -68,4 +75,171 @@ body {
 }
 .top__heading h2 span {
   color: #F16D7F;
+}
+
+.categories {
+  margin-top: 60px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.categories__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 260px;
+  position: relative;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+.categories__card p {
+  position: relative;
+  color: #FFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  z-index: 2;
+  padding-bottom: 5px;
+}
+.categories__card h3 {
+  position: relative;
+  color: #F16D7F;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  z-index: 2;
+}
+.categories__card::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(33, 22, 22, 0.6980392157);
+  inset: 0;
+  z-index: 1;
+}
+.categories__card-1 {
+  background-image: url("images/card1.jpg");
+}
+.categories__card-2 {
+  background-image: url("images/card2.jpg");
+}
+.categories__card-3 {
+  background-image: url("images/card3.jpg");
+}
+.categories__card-wide {
+  grid-column: 1/-1;
+  min-height: 180px;
+  background-image: url("images/card4.jpg");
+}
+
+.products {
+  margin-top: 100px;
+  margin-bottom: 95px;
+}
+.products__header {
+  margin-bottom: 48px;
+}
+.products__heading {
+  color: #222222;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+  padding-bottom: 6px;
+}
+.products__text {
+  color: #9f9f9f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+}
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 48px;
+}
+.products__footer {
+  text-align: center;
+}
+.products__more-btn {
+  color: #F16D7F;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  border: 1px solid #F16D7F;
+  padding: 15px 40px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: color, background-color 0.5s ease;
+}
+.products__more-btn:hover {
+  background-color: #F16D7F;
+  color: #fff;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+.product-card__box {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 20px;
+  background-color: #f8f8f8;
+}
+.product-card__title {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  color: #000;
+}
+.product-card__text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #5d5d5d;
+}
+.product-card__price {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #F16D7F;
+}
+
+.ad-box {
+  background-color: #222222;
+  display: flex;
+  gap: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.ad-box__card {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.ad-box__title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fbfbfb;
+}
+.ad-box__text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  color: #fbfbfb;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }/*# sourceMappingURL=style.css.map */
