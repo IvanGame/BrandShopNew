@@ -161,7 +161,7 @@ a {
 }
 .products__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   margin-bottom: 48px;
 }
@@ -242,4 +242,124 @@ a {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.subscribe {
+  padding-top: 100px;
+  padding-bottom: 130px;
+  background-image: url("images/subscribe_back.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.subscribe::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(244, 244, 244, 0.6980392157);
+  inset: 0;
+  z-index: 1;
+}
+.subscribe__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+.subscribe__left-img {
+  max-width: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.subscribe__left-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.5) translateY(10px);
+}
+.subscribe__left-text {
+  text-align: center;
+  max-width: 350px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #222222;
+}
+.subscribe__right {
+  position: relative;
+  z-index: 2;
+}
+.subscribe__right-header {
+  margin-bottom: 30px;
+}
+.subscribe__right-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 167%;
+  color: #222222;
+  text-align: center;
+}
+.subscribe__right-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 167%;
+  color: #222222;
+  text-align: center;
+}
+.subscribe__right-form input {
+  width: 60%;
+  padding: 15px 0px 15px 25px;
+  background-color: #E1E1E1;
+  border-radius: 23px 0px 0px 23px;
+  margin-right: -3px;
+  border: none;
+}
+.subscribe__right-form button {
+  background-color: #F16D7F;
+  padding: 15px 20px;
+  border-radius: 0px 23px 23px 0px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+}
+
+.footer {
+  background-color: #222222;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__left {
+  font-weight: 400;
+  font-size: 16px;
+  color: #fbfbfb;
+}
+.footer__right {
+  display: flex;
+  gap: 8px;
+}
+.footer__social {
+  background-color: #fff;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.footer__social svg path {
+  transition: fill 0.3s ease;
+}
+.footer__social:hover {
+  background-color: #F16D7F;
+}
+.footer__social:hover svg path {
+  fill: #fff;
 }/*# sourceMappingURL=style.css.map */

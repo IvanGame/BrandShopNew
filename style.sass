@@ -136,7 +136,7 @@ a
         text-align: center
     &__list
         display: grid
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr))
         gap: 30px
         margin-bottom: 48px
     &__footer
@@ -205,3 +205,104 @@ a
         text-align: center
         padding-left: 30px
         padding-right: 30px
+
+.subscribe
+    padding-top: 100px
+    padding-bottom: 130px
+    background-image: url("images/subscribe_back.jpg")
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+
+    &::before
+        content: ""
+        position: absolute
+        background-color: #F4F4F4B2
+        inset: 0
+        z-index: 1
+    &__left
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 24px
+        position: relative
+        z-index: 2
+    &__left-img
+        max-width: 96px
+        border-radius: 50%
+        overflow: hidden
+        & img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center
+            transform: scale(1.5) translateY(10px)
+    &__left-text
+        text-align: center
+        max-width: 350px
+        font-weight: 400
+        font-size: 20px
+        color: $colorBack
+    &__right
+        position: relative
+        z-index: 2
+    &__right-header
+        margin-bottom: 30px
+    &__right-title
+        font-weight: 700
+        font-size: 24px
+        line-height: 167%
+        color: $colorBack
+        text-align: center
+    &__right-text
+        font-weight: 400
+        font-size: 18px
+        line-height: 167%
+        color: $colorBack
+        text-align: center
+    &__right-form
+        & input
+            width: 60%
+            padding: 15px 0px 15px 25px
+            background-color: #E1E1E1
+            border-radius: 23px 0px 0px 23px
+            margin-right: -3px
+            border: none
+        & button
+            background-color: $colorSite
+            padding: 15px 20px
+            border-radius: 0px 23px 23px 0px
+            font-weight: 400
+            font-size: 14px
+            color: #fff
+            border: none
+
+.footer
+    background-color: $colorBack
+    padding-top: 24px
+    padding-bottom: 24px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__left
+        font-weight: 400
+        font-size: 16px
+        color: #fbfbfb
+    &__right
+        display: flex
+        gap: 8px
+    &__social
+        background-color: #fff
+        min-width: 32px
+        min-height: 32px
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: background-color .3s ease
+        & svg path
+            transition: fill .3s ease
+        &:hover
+            background-color: $colorSite
+        &:hover svg path
+            fill: #fff
