@@ -91,6 +91,7 @@ summary::-webkit-details-marker
         cursor: pointer
         background-position: center
         background-size: cover
+        transition: box-shadow .3s ease
         & p
             position: relative
             color: #FFF
@@ -116,6 +117,8 @@ summary::-webkit-details-marker
             background-color: #211616B2
             inset: 0
             z-index: 1
+        &:hover
+            box-shadow: 6px 6px 35px #000
     &__card-1
         background-image: url("images/card1.jpg")
     &__card-2
@@ -394,6 +397,11 @@ summary::-webkit-details-marker
         padding: 16px 40px
         background: #fff
         border: 1px solid #A4A4A4
+        cursor: pointer
+        transition: color, background .3s ease
+        &:hover
+            background: $colorSite
+            color: #fff
     &__right
         display: flex
         flex-direction: column
@@ -402,10 +410,6 @@ summary::-webkit-details-marker
         display: flex
         flex-direction: column
         gap: 20px
-        & input
-            margin-top: 20px
-            padding: 13px 18px 16px 18px
-            border: 1px solid #A4A4A4
         & button
             margin-top: 20px
             padding: 10px 15px 12px 15px
@@ -414,6 +418,20 @@ summary::-webkit-details-marker
             font-weight: 400
             font-size: 11px
             color: #4A4A4A
+            cursor: pointer
+            transition: color, background .3s ease
+            &:hover
+                background: $colorSite
+                color: #fff
+    &__input
+        margin-top: 20px
+        padding: 13px 18px 16px 18px
+        border: 1px solid #A4A4A4
+        width: 100%
+    &__input::placeholder
+        color: #000
+    &__input-first::placeholder
+        color: #B1B1B1
     &__form-title
         font-weight: 400
         font-size: 16px
@@ -421,6 +439,43 @@ summary::-webkit-details-marker
         color: $colorBack
     &__total
         background: #F5F3F3
+        padding: 40px
+    &__total-text
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        gap: 12px
+        border-bottom: 1px solid #E2E2E2
+        padding-bottom: 21px
+        margin-bottom: 17px
+    &__total-sub
+        font-weight: 400
+        font-size: 11px
+        line-height: 100%
+        color: #4a4a4a
+        & span
+            margin-left: 20px
+    &__total-grand
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        color: $colorBack
+        & span
+            margin-left: 20px
+            color: $colorSite
+            font-weight: 700
+    &__total-btn
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        color: #fff
+        padding: 15px 40px
+        background-color: $colorSite
+        border: none
+        cursor: pointer
+        transition: box-shadow .3s ease
+        &:hover
+            box-shadow: 5px 5px 10px #4e4e4e
 
 .cart-card
     display: flex
