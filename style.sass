@@ -12,6 +12,14 @@ body
 a
     text-decoration: none
 
+summary 
+    display: block
+
+
+summary::-webkit-details-marker 
+    display: none
+
+
 .center
     padding-left: calc( 50% - $siteWidth / 2 )
     padding-right: calc( 50% - $siteWidth / 2 )
@@ -28,6 +36,8 @@ a
         gap: 40px
     &__left-btn
             cursor: pointer
+            position: relative
+            top: 5px
             path
                 transition: fill 0.3s ease
             &:hover path
@@ -44,7 +54,7 @@ a
     gap: 64px
     background-color: #F1E4E6
     & img
-        width: 50%
+        width: 50vw
     &__heading
         align-self: center
         border-left: 12px solid $colorSite
@@ -67,6 +77,7 @@ a
 
 .categories
     margin-top: 60px
+    margin-bottom: 100px
     gap: 30px
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -116,11 +127,58 @@ a
         min-height: 180px
         background-image: url("images/card4.jpg")
 
+.site-title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 60px
+    padding-top: 60px
+    background-color: #F8F3F4
+    &__heading
+        font-weight: 400
+        font-size: 24px
+        line-height: 100%
+        color: $colorSite
+
+.breadcrumbs
+    display: flex
+    gap: 6px
+    list-style: none
+    &__item
+        padding: 0
+        margin: 0
+    &__item a
+        text-decoration: none
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        color: #6F6E6E
+    &__item:hover a
+        color: $colorSite
+    &__item:nth-child(2)::before
+        content: "/"
+        margin-right: 6px
+        color: #6F6E6E
+    &__item:nth-child(3)::before
+        content: "/"
+        color: #6F6E6E
+    &__item-active a
+        font-weight: 700
+        font-size: 16px
+        line-height: 100%
+        color: $colorSite
+
 .products
-    margin-top: 100px
     margin-bottom: 95px
     &__header
         margin-bottom: 48px
+    &__filter
+        padding-top: 39px
+        height: 132px
+        box-sizing: border-box
+        display: flex
+        gap: 30px
+        
     &__heading
         color: $colorBack
         font-size: 30px
@@ -141,6 +199,8 @@ a
         margin-bottom: 48px
     &__footer
         text-align: center
+        display: flex
+        justify-content: center
     &__more-btn
         color: $colorSite
         font-weight: 400
@@ -154,6 +214,120 @@ a
     &__more-btn:hover
         background-color: $colorSite
         color: #fff
+
+.filter
+    padding-top: 13px
+    width: 360px
+    box-sizing: border-box
+    position: relative
+    z-index: 1
+    
+    &__content
+        background-color: #fff
+        box-shadow: 6px 25px 35px #00000036
+        padding-top: 0px
+        padding-right: 16px
+        padding-bottom: 16px
+        padding-left: 16px
+    &[open]
+        background: #FFFFFF
+        box-shadow: 6px 4px 50px #00000036
+    &[open] &__heading
+        color: $colorSite
+    &[open] path
+        fill: $colorSite
+    &__summary
+        display: flex
+        align-items: center
+        gap: 11px
+        padding-left: 16px
+    &__heading
+        font-weight: 600
+        color: #000
+        font-size: 14px
+        line-height: 100%
+    &__item
+        margin-top: 16px
+    &__item[open] &__title
+        color: $colorSite
+    &__title
+        font-weight: 400
+        font-size: 14px
+        line-height: 100%
+        color: #6F6E6E
+        padding: 8px 11px 11px 11px
+        border-bottom: 1px solid #EBEBEB
+        border-left: 5px solid $colorSite
+    &__link-box
+        display: flex
+        flex-direction: column
+        gap: 11px
+        padding: 24px 16px
+    &__link
+        font-weight: 400
+        font-size: 14px
+        line-height: 100%
+        color: #6F6E6E
+        &:hover
+            color: $colorSite
+
+.sort
+    display: flex
+    padding-top: 12px
+    gap: 18px
+    &__details
+        position: relative
+    &__summary
+        display: flex
+        align-items: center
+        gap: 10px
+    &__heading
+        font-weight: 400
+        font-size: 14px 
+        line-height: 100%
+        color: #6F6E6E
+    &__box
+        position: absolute
+        left: -9px
+        top: 22px
+        background-color: #fff
+        box-shadow: 6px 25px 35px #00000036
+        padding: 7px 30px 11px 9px
+        z-index: 1
+        display: flex
+        flex-direction: column
+        gap: 6px
+    &__check
+        font-family: "Roboto", sans-serif
+        font-weight: 400
+        font-size: 14px
+        line-height: 100%
+        color: #6f6e6e
+        display: flex
+        gap: 9px
+        align-items: center
+        accent-color: $colorSite
+
+.pages
+    border: 1px solid #EBEBEB
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 20px
+    padding: 15px
+    &__page
+        font-weight: 300
+        font-size: 16px
+        line-height: 100%
+        color: #EBEBEB
+    &__page:hover
+        color: $colorSite
+    &__page-active
+        color: $colorSite
+    &__left:hover svg path
+        fill: $colorSite
+    &__right:hover svg path
+        fill: $colorSite
 
 .product-card
     display: flex
@@ -178,6 +352,114 @@ a
     &__price
         font-weight: 400
         font-size: 16px
+        line-height: 100%
+        color: $colorSite
+
+.cart
+    margin-top: 96px
+    margin-bottom: 128px
+    display: flex
+    justify-content: space-between
+    &__left
+        display: flex
+        flex-direction: column
+        gap: 72px
+    &__products
+        display: flex
+        flex-direction: column
+        gap: 40px
+    &__products-card
+        display: flex
+        min-width: 650px
+        position: relative
+        box-shadow: 17px 19px 24px #00000021
+    &__products-img img
+        width: 100%
+        height: 100%
+    &__close-btn
+        position: absolute
+        top: 28px
+        right: 22px
+        border: none
+        background: transparent
+        cursor: pointer
+    &__btns
+        display: flex
+        justify-content: space-between
+    &__button
+        color: #000
+        font-weight: 400
+        font-size: 14px
+        line-height: 100%
+        padding: 16px 40px
+        background: #fff
+        border: 1px solid #A4A4A4
+    &__right
+        display: flex
+        flex-direction: column
+        gap: 60px
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 20px
+        & input
+            margin-top: 20px
+            padding: 13px 18px 16px 18px
+            border: 1px solid #A4A4A4
+        & button
+            margin-top: 20px
+            padding: 10px 15px 12px 15px
+            border: 1px solid #A4A4A4
+            background: #fff
+            font-weight: 400
+            font-size: 11px
+            color: #4A4A4A
+    &__form-title
+        font-weight: 400
+        font-size: 16px
+        line-height: 100%
+        color: $colorBack
+    &__total
+        background: #F5F3F3
+
+.cart-card
+    display: flex
+    flex-direction: column
+    padding: 24px
+    gap: 6px
+    &__header
+        display: flex
+        justify-content: space-between
+    &__title
+        font-weight: 400
+        font-size: 24px
+        line-height: 110%
+        color: $colorBack
+        max-width: 200px
+        margin-bottom: 34px
+    &__text, &__lable
+        font-weight: 400
+        font-size: 22px
+        line-height: 100%
+        color: #575757
+    &__quantity
+        display: flex
+        align-items: center
+        gap: 24px
+        & input
+            width: 42px
+            // padding: 4px
+            border: 1px solid #EAEAEA
+            text-align: center
+            color: #656565
+            font-size: 18px
+            appearance: textfield
+        & input::-webkit-outer-spin-button,
+        & input::-webkit-inner-spin-button
+            display: none
+    &__price
+        font-weight: 400
+        font-size: 22px
         line-height: 100%
         color: $colorSite
 
@@ -210,6 +492,7 @@ a
     padding-top: 100px
     padding-bottom: 130px
     background-image: url("images/subscribe_back.jpg")
+    background-size: 100% 100%
     display: flex
     align-items: center
     justify-content: space-between
@@ -269,6 +552,7 @@ a
             border-radius: 23px 0px 0px 23px
             margin-right: -3px
             border: none
+            outline: none
         & button
             background-color: $colorSite
             padding: 15px 20px
